@@ -6,9 +6,9 @@ https://www.udemy.com/computer-vision-a-z/
 In particular, right now the following programs are present:
 * Face Recognition and Smile Detector: 
   
-  The programs are implemented in Python 3 using openCV2 library and they can recognize face, eyes and smile
+  The programs are implemented in Python 3 using openCV2 library and they can recognize face, eyes and smile in real time from the webcam
   
-  ![alt text](Smile%20Detector%20/Screenshot/SmileDetector.png "Screenshot taken from my video after the detection")
+ ![alt text](Smile%20Detector/Screenshot/SmileDetector.png )
 
   
 * SSD Object Detection: 
