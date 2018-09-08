@@ -14,7 +14,9 @@ The following files are present:
 
 In the folder 'Other videos' you can find other videos on which I tested the SSD.
 To run the program, you need to have Torch, imageio and OpenCV2 installed.
+
 Besides, to run the program you need to download the pretrained weights from the following link:
+
 https://drive.google.com/open?id=1zfGjsatAVsrBIMDTceIh95UO8sfs4kDD
 
 
