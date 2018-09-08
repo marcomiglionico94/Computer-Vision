@@ -10,3 +10,5 @@ In particular, right now the following programs are present:
 * SSD Object Detection: 
 
   Recognize object in a video using SSD( Single Shot Multibox Detector). The program is implemented in Python 3 using a pretrained SSD    network able to recognize from 30 to 40 objects
+
+![alt text](SSD Object Recognition/Screenshot/SSD.png "Screenshot taken from my video after the detection")
