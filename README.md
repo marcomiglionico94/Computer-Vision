@@ -8,4 +8,5 @@ In particular, right now the following programs are present:
   
   The programs are implemented in Python 3 using openCV2 library.
 * SSD Object Detection: 
-Object recognition
+
+  Recognize object in a video using SSD( Single Shot Multibox Detector). The program is implemented in Python 3 using a pretrained SSD    network able to recognize from 30 to 40 objects
