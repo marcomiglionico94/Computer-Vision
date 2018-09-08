@@ -16,3 +16,6 @@ In particular, right now the following programs are present:
   Recognize object in a video using SSD( Single Shot Multibox Detector). The program is implemented in Python 3 using a pretrained SSD    network able to recognize from 30 to 40 objects
 
 ![alt text](SSD%20Object%20Recognition/Screenshot/SSD.png "Screenshot taken from my video after the detection")
+
+* Generative Adversarial Network GAN:
+
