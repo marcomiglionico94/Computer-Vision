@@ -1,4 +1,4 @@
-# Computer-Vision #
+# Computer Vision #
 This folder contains some Python programs that implement different Computer Vision techniques.
 Some of the program has been done following the online course on udemy Deep Learning and Computer Vision A-Z™: OpenCV, SSD & GANs:
 https://www.udemy.com/computer-vision-a-z/
