@@ -39,20 +39,62 @@ class Generator(nn.Module):
     def __init__(self):
         super(Generator, self).__init__() # We inherit from the nn.Module tools.
         self.main = nn.Sequential(  # We create a meta module of a neural network that will contain a sequence of modules
-                nn.ConvTranspose2d(100, 512, 4, 1, 0, bias = False) # Inversed Convolution Layer
-                nn.BatchNorm2d(512) # Apply Batch Normalization
-                nn.ReLU(True) # Add Relu to break linearity
-                nn.ConvTranspose2d(512, 256, 4, 2, 1, bias = False)  # Additional Inversed Convolution Layer
-                nn.BatchNorm2d(256) # Apply Batch Normalization
-                nn.ReLU(True) # Add Relu to break linearity
-                nn.ConvTranspose2d(256, 128, 4, 2, 1, bias = False)  # Additional Inversed Convolution Layer
-                nn.BatchNorm2d(128) # Apply Batch Normalization
-                nn.ReLU(True) # Add Relu to break linearity
-                nn.ConvTranspose2d(128, 64, 4, 2, 1, bias = False)  # Additional Inversed Convolution Layer
-                nn.BatchNorm2d(128) # Apply Batch Normalization
-                nn.ReLU(True) # Add Relu to break linearity
-                nn.ConvTranspose2d(64, 3, 4, 2, 1, bias = False)  # Additional Inversed Convolution Layer
+                nn.ConvTranspose2d(100, 512, 4, 1, 0, bias = False), # Inversed Convolution Layer
+                nn.BatchNorm2d(512), # Apply Batch Normalization
+                nn.ReLU(True), # Add Relu to break linearity
+                nn.ConvTranspose2d(512, 256, 4, 2, 1, bias = False),  # Additional Inversed Convolution Layer
+                nn.BatchNorm2d(256), # Apply Batch Normalization
+                nn.ReLU(True), # Add Relu to break linearity
+                nn.ConvTranspose2d(256, 128, 4, 2, 1, bias = False),  # Additional Inversed Convolution Layer
+                nn.BatchNorm2d(128), # Apply Batch Normalization
+                nn.ReLU(True), # Add Relu to break linearity
+                nn.ConvTranspose2d(128, 64, 4, 2, 1, bias = False),  # Additional Inversed Convolution Layer
+                nn.BatchNorm2d(128), # Apply Batch Normalization
+                nn.ReLU(True), # Add Relu to break linearity
+                nn.ConvTranspose2d(64, 3, 4, 2, 1, bias = False),  # Additional Inversed Convolution Layer
                 nn.Tanh() # We apply a Tanh rectification to break the linearity and stay between -1 and +1.
                 )
+ 
+# We define the forward function that takes as argument an input that will be fed to the neural network, and that will return the output containing the generated images.       
+    def forward(self, input):
+            output = self.main(input)  # We forward propagate the signal through the whole neural network of the generator defined by self.main.
+            return output # Return the output of the neural network
+
+
+        
+# Define the discriminator class
+
+class Discriminator(nn.Module):
+    
+    def __init__(self):
+        super(Discriminator, self).__init__() # We inherit from the nn.Module tools.
+        self.main = nn.Sequential(
+                nn.Conv2d(3, 64, 4, 2, 1, bias = False), # Convolution layer
+                nn.LeakyReLU(0.2, inplace = True) # We apply a Leaky Relu
+                nn.Conv2d(64, 128, 4, 2, 1, bias = False), # We add another convolution.
+                nn.BatchNorm2d(128), # We normalize all the features along the dimension of the batch.
+                nn.LeakyReLU(0.2, inplace = True), # We apply another LeakyReLU.
+                nn.Conv2d(128, 256, 4, 2, 1, bias = False), # We add another convolution.
+                nn.BatchNorm2d(256), # We normalize again.
+                nn.LeakyReLU(0.2, inplace = True), # We apply another LeakyReLU.
+                nn.Conv2d(256, 512, 4, 2, 1, bias = False), # We add another convolution.
+                nn.BatchNorm2d(512), # We normalize again.
+                nn.LeakyReLU(0.2, inplace = True), # We apply another LeakyReLU.
+                nn.Conv2d(512, 1, 4, 1, 0, bias = False), # We add another convolution.
+                nn.Sigmoid() # We apply a Sigmoid rectification to break the linearity and stay between 0 and 1.
+                )
+
+# We define the forward function that takes as argument an input that will be fed to the neural network, and that will return the output that will be a value between 0 a 1           
+        def forward(self, input):
+            output = self.main(input)  # We forward propagate the signal through the whole neural network of the generator defined by self.main.
+            return output.view(-1) # Return the output of the neural network flattened through the view function
         
         
+
+# Creating the Generator
+net_G = Generator() # Generate the neural netowrk object
+net_G.apply(weights_init) # Initialize the weights
+
+# Creating the Discriminator
+net_D = Discriminator() # Generate the neural netowrk object
+net_D.apply(weights_init) # Initialize the weights
