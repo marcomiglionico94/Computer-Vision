@@ -70,7 +70,7 @@ class Discriminator(nn.Module):
         super(Discriminator, self).__init__() # We inherit from the nn.Module tools.
         self.main = nn.Sequential(
                 nn.Conv2d(3, 64, 4, 2, 1, bias = False), # Convolution layer
-                nn.LeakyReLU(0.2, inplace = True) # We apply a Leaky Relu
+                nn.LeakyReLU(0.2, inplace = True), # We apply a Leaky Relu
                 nn.Conv2d(64, 128, 4, 2, 1, bias = False), # We add another convolution.
                 nn.BatchNorm2d(128), # We normalize all the features along the dimension of the batch.
                 nn.LeakyReLU(0.2, inplace = True), # We apply another LeakyReLU.
@@ -98,3 +98,13 @@ net_G.apply(weights_init) # Initialize the weights
 # Creating the Discriminator
 net_D = Discriminator() # Generate the neural netowrk object
 net_D.apply(weights_init) # Initialize the weights
+
+# Training the DCGANs
+criterion = nn.BCELoss() # We will use Binary Cross Entropy as loss function
+optimizerD = optim.Adam(net_D.parameters(), lr = 0.0002, betas = (0.5, 0.999)) # We will use Adam optimizer and specify learning rates and betas
+optimizerG = optim.Adam(net_G.parameters(), lr = 0.0002, betas = (0.5, 0.999)) # We will use Adam optimizer and specify learning rates and betas
+
+# Training process with n epochs
+for epoch in range(25):
+    for i, data in enumerate(dataloader, 0):
+        
