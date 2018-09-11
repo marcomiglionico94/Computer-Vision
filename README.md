@@ -17,5 +17,8 @@ In particular, right now the following programs are present:
 
 ![alt text](SSD%20Object%20Recognition/Screenshot/SSD.png "Screenshot taken from my video after the detection")
 
+Video available on my LinkedIn profie:
+'https://www.linkedin.com/feed/update/urn:li:activity:6443950628728373248'
+
 * Generative Adversarial Network GAN:
 
