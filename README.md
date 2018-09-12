@@ -21,4 +21,6 @@ Video available on my LinkedIn profie:
 'https://www.linkedin.com/feed/update/urn:li:activity:6443950628728373248'
 
 * Generative Adversarial Network GAN:
+  The GAN is composed of two neural networks the Generator and the Discriminator. The purpose of this program is leanring from real images to generate new images. This is an example of the generated images:
 
+![alt text](/Image%20Generation%20GAN/results/fake_samples_epoch_024.png "Example of generated images")
