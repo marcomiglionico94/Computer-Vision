@@ -18,6 +18,10 @@ The dataset can be found at the following link:
 
 https://drive.google.com/open?id=1Um4Jfv7d-Nh407Z31MFQpWWtVhfKddOC
 
+More informations about the dataset can be found here:
+
+http://www.cs.toronto.edu/~kriz/cifar.html
+
 Run the 'GAN.py' file to start training the GAN.
 
 
