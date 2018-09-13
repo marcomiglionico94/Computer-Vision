@@ -4,14 +4,14 @@ Some of the program has been done following the online course on udemy Deep Lear
 https://www.udemy.com/computer-vision-a-z/
 
 In particular, right now the following programs are present:
-* Face Recognition and Smile Detector: 
+* **Face Recognition and Smile Detector**: 
   
   The programs are implemented in Python 3 using openCV2 library and they can recognize face, eyes and smile in real time from the webcam
   
  ![alt text](Smile%20Detector/Screenshot/SmileDetector.png )
 
   
-* SSD Object Detection: 
+* **SSD Object Detection**: 
 
   Recognize object in a video using SSD( Single Shot Multibox Detector). The program is implemented in Python 3 using a pretrained SSD    network able to recognize from 30 to 40 objects
 
@@ -20,7 +20,7 @@ In particular, right now the following programs are present:
 Video available on my LinkedIn profie:
 'https://www.linkedin.com/feed/update/urn:li:activity:6443950628728373248'
 
-* Generative Adversarial Network GAN:
+* **Generative Adversarial Network GAN**:
 
   The GAN is composed of two neural networks the Generator and the Discriminator. The purpose of this program is leanring from real images to generate new images. This is an example of the generated images:
 
